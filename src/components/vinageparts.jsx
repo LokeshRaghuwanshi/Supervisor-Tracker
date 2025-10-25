@@ -55,33 +55,42 @@ export default function VinAgeParts() {
   };
 
   return (
-    <div style={{fontFamily:"Poppins, sans-serif",backgroundColor:"#0f172a",color:"#f8fafc",minHeight:"100vh",width:"100%"}}>
+    <div style={{fontFamily:"Poppins, sans-serif",backgroundColor:"#0f172a",color:"#f8fafc",minHeight:"100vh"}}>
 
       {/* Hero Section */}
       <div style={{
         backgroundImage:"url('https://images.unsplash.com/photo-1600718372025-1ff1b3e3cf02?auto=format&fit=crop&w=1600&q=80')",
         backgroundSize:"cover",
         backgroundPosition:"center",
-        padding:"100px 20px",
+        padding:"60px 10px",
         textAlign:"center",
         color:"white",
         textShadow:"0px 2px 8px rgba(0,0,0,0.6)"
       }}>
-        <h1 style={{fontSize:"3rem",marginBottom:"15px",fontWeight:"bold"}}>🏍️ Ride Smart. Maintain Smart.</h1>
-        <p style={{fontSize:"1.2rem",maxWidth:"800px",margin:"auto",opacity:0.9}}>
-          Enter your Vehicle Identification Number (VIN) and discover your bike’s age and recommended maintenance instantly.
-        </p>
+        <div style={{
+          background:"rgba(0,0,0,0.5)",
+          padding:"20px",
+          borderRadius:"12px",
+          display:"inline-block",
+          width:"90%",
+          maxWidth:"320px"
+        }}>
+          <h1 style={{fontSize:"1.6rem", marginBottom:"10px", fontWeight:"bold"}}>🏍️ Ride Smart. Maintain Smart.</h1>
+          <p style={{fontSize:"0.9rem", opacity:0.9, lineHeight:"1.3"}}>
+            Enter your VIN to discover your bike’s age and recommended maintenance instantly.
+          </p>
+        </div>
       </div>
 
       {/* Input Card */}
       <div style={{
         width:"90%",
-        maxWidth:"700px",
-        margin:"-60px auto 40px auto",
+        maxWidth:"320px",
+        margin:"-30px auto 30px auto",
         backgroundColor:"#1e293b",
-        padding:"30px",
-        borderRadius:"16px",
-        boxShadow:"0 8px 20px rgba(0,0,0,0.4)",
+        padding:"20px",
+        borderRadius:"12px",
+        boxShadow:"0 6px 15px rgba(0,0,0,0.4)",
         textAlign:"center"
       }}>
         <input
@@ -91,12 +100,12 @@ export default function VinAgeParts() {
           onChange={(e)=>setVin(e.target.value.toUpperCase())}
           maxLength={14}
           style={{
-            padding:"14px",
+            padding:"10px",
             width:"100%",
-            marginBottom:"15px",
-            borderRadius:"10px",
+            marginBottom:"12px",
+            borderRadius:"8px",
             border:"1px solid #334155",
-            fontSize:"16px",
+            fontSize:"14px",
             backgroundColor:"#0f172a",
             color:"#f1f5f9",
             textAlign:"center"
@@ -106,12 +115,12 @@ export default function VinAgeParts() {
           onClick={analyzeVIN}
           style={{
             width:"100%",
-            padding:"14px",
-            borderRadius:"10px",
+            padding:"10px",
+            borderRadius:"8px",
             border:"none",
             backgroundColor:"#3b82f6",
             color:"white",
-            fontSize:"16px",
+            fontSize:"14px",
             fontWeight:"600",
             cursor:"pointer"
           }}
@@ -126,22 +135,24 @@ export default function VinAgeParts() {
           display:"flex",
           flexWrap:"wrap",
           justifyContent:"center",
+          gap:"12px",
           width:"95%",
           margin:"auto"
         }}>
           {recommendations.map((part, idx) => (
             <div key={idx} style={{
               backgroundColor:"#1e293b",
-              margin:"10px",
-              padding:"15px",
+              padding:"12px",
               borderRadius:"12px",
-              width:"180px",
+              width:"45%",
+              maxWidth:"180px",
               boxShadow:"0 4px 10px rgba(0,0,0,0.3)",
-              textAlign:"center"
+              textAlign:"center",
+              flexGrow:1
             }}>
-              <img src={PART_IMAGES[part]} alt={part} width="50" height="50" style={{marginBottom:"10px"}} />
+              <img src={PART_IMAGES[part]} alt={part} width="45" height="45" style={{marginBottom:"8px"}} />
               <b>{part}</b>
-              <p style={{fontSize:"12px",color:"#cbd5e1",marginTop:"5px"}}>{PART_BENEFITS[part]}</p>
+              <p style={{fontSize:"12px", color:"#cbd5e1", marginTop:"4px", lineHeight:"1.2"}}>{PART_BENEFITS[part]}</p>
             </div>
           ))}
         </div>
@@ -149,8 +160,8 @@ export default function VinAgeParts() {
 
       {/* Footer */}
       <footer style={{
-        marginTop:"40px",
-        padding:"20px",
+        marginTop:"30px",
+        padding:"15px",
         textAlign:"center",
         color:"#cbd5e1",
         backgroundColor:"#1e293b"
