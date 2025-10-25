@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./VinAgeParts.css"; // exact casing!
+import "./VinageParts.css"; // exact casing!
 
 const YEAR_MAP = { A:2015,B:2016,C:2017,D:2018,E:2019,F:2020,G:2021,H:2022,J:2023,K:2024,L:2025 };
 const RECOMMENDATION_RULES = {
