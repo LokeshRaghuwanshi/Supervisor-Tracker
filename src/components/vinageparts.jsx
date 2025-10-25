@@ -42,7 +42,7 @@ const PART_BENEFITS = {
   "Replace worn parts":"Reduces risk of breakdowns."
 };
 
-export default function VinAgeParts() {
+export default function vinageparts() {
   const [vin,setVin] = useState("");
   const [vehicleAge,setVehicleAge] = useState(null);
   const [recommendations,setRecommendations] = useState([]);
