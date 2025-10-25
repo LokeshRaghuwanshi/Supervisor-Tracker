@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./vinageparts.css"; // Make sure this file is in the same folder
+import "./VinAgeParts.css"; // exact casing!
 
 const YEAR_MAP = { A:2015,B:2016,C:2017,D:2018,E:2019,F:2020,G:2021,H:2022,J:2023,K:2024,L:2025 };
 const RECOMMENDATION_RULES = {
@@ -42,10 +42,18 @@ const PART_BENEFITS = {
   "Replace worn parts":"Reduces risk of breakdowns."
 };
 
-export default function vinageparts() {
+// Sample top supervisors
+const TOP_SUPERVISORS = [
+  { name:"Rahul Sharma", dealership:"Khagaria Auto Agency", amount:"₹1,20,000", image:"https://randomuser.me/api/portraits/men/32.jpg", rating:5 },
+  { name:"Abdul ", dealership:"Anas Automobiles", amount:"₹1,15,000", image:"https://randomuser.me/api/portraits/women/44.jpg", rating:5 },
+  { name:"Amit Verma", dealership:"Mehwish Motors", amount:"₹1,10,000", image:"https://randomuser.me/api/portraits/men/55.jpg", rating:5 }
+];
+
+export default function VinAgeParts() {
   const [vin,setVin] = useState("");
   const [vehicleAge,setVehicleAge] = useState(null);
   const [recommendations,setRecommendations] = useState([]);
+  const [showSupervisors,setShowSupervisors] = useState(false);
 
   const analyzeVIN = () => {
     if(vin.length !== 14){ alert("VIN must be 14 characters!"); return; }
@@ -59,15 +67,22 @@ export default function vinageparts() {
 
   return (
     <div className="vin-container">
-      {/* Hero Section */}
+      {/* Supervisor Button */}
+      <div className="supervisor-button-container">
+        <button className="supervisor-btn" onClick={()=>setShowSupervisors(!showSupervisors)}>
+          Top Supervisors
+        </button>
+      </div>
+
+      {/* Hero */}
       <div className="hero">
         <div className="hero-box">
-          <h1>🏍️ Ride Smart. Maintain Smart.</h1>
+          <h1>🏍️ Know Your Ride. Keep It Alive.</h1>
           <p>Enter your VIN to discover your bike’s age and recommended maintenance instantly.</p>
         </div>
       </div>
 
-      {/* Input Card */}
+      {/* VIN Input */}
       <div className="input-card">
         <input
           type="text"
@@ -79,7 +94,7 @@ export default function vinageparts() {
         <button onClick={analyzeVIN}>Analyze VIN</button>
       </div>
 
-      {/* Results Section */}
+      {/* Recommended Parts */}
       {vehicleAge !== null && (
         <div className="results-container">
           {recommendations.map((part, idx) => (
@@ -92,10 +107,26 @@ export default function vinageparts() {
         </div>
       )}
 
+      {/* Supervisors */}
+      {showSupervisors && (
+        <div className="supervisor-container">
+          {TOP_SUPERVISORS.map((sup, idx) => (
+            <div key={idx} className="supervisor-card">
+              <img src={sup.image} alt={sup.name} />
+              <div className="supervisor-rating">
+                {"★".repeat(sup.rating)}{"☆".repeat(5 - sup.rating)}
+              </div>
+              <b>{sup.name}</b>
+              <p>{sup.dealership}</p>
+              <p>{sup.amount}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
       <footer>
         © {new Date().getFullYear()} VIN Tracker | Built for Smarter Rides 🏍️
       </footer>
     </div>
   );
 }
-
