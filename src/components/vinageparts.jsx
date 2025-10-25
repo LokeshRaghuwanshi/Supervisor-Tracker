@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./VinAgeParts.css"; // Make sure this file is in the same folder
 
 const YEAR_MAP = { A:2015,B:2016,C:2017,D:2018,E:2019,F:2020,G:2021,H:2022,J:2023,K:2024,L:2025 };
 const RECOMMENDATION_RULES = {
@@ -8,6 +9,7 @@ const RECOMMENDATION_RULES = {
   4:["Brake shoe","Clutch cable","Cam chain"],
   5:["Full service","Replace worn parts"]
 };
+
 const PART_IMAGES = {
   "Engine oil":"https://cdn-icons-png.flaticon.com/512/430/430593.png",
   "Air filter":"https://cdn-icons-png.flaticon.com/512/420/420315.png",
@@ -23,6 +25,7 @@ const PART_IMAGES = {
   "Full service":"https://cdn-icons-png.flaticon.com/512/3570/3570349.png",
   "Replace worn parts":"https://cdn-icons-png.flaticon.com/512/3094/3094823.png"
 };
+
 const PART_BENEFITS = {
   "Engine oil":"Keeps engine running smoothly.",
   "Air filter":"Improves air intake and engine performance.",
@@ -55,119 +58,44 @@ export default function VinAgeParts() {
   };
 
   return (
-    <div style={{fontFamily:"Poppins, sans-serif",backgroundColor:"#0f172a",color:"#f8fafc",minHeight:"100vh"}}>
-
+    <div className="vin-container">
       {/* Hero Section */}
-      <div style={{
-        backgroundImage:"url('https://images.unsplash.com/photo-1600718372025-1ff1b3e3cf02?auto=format&fit=crop&w=1600&q=80')",
-        backgroundSize:"cover",
-        backgroundPosition:"center",
-        padding:"60px 10px",
-        textAlign:"center",
-        color:"white",
-        textShadow:"0px 2px 8px rgba(0,0,0,0.6)"
-      }}>
-        <div style={{
-          background:"rgba(0,0,0,0.5)",
-          padding:"20px",
-          borderRadius:"12px",
-          display:"inline-block",
-          width:"90%",
-          maxWidth:"320px"
-        }}>
-          <h1 style={{fontSize:"1.6rem", marginBottom:"10px", fontWeight:"bold"}}>🏍️ Ride Smart. Maintain Smart.</h1>
-          <p style={{fontSize:"0.9rem", opacity:0.9, lineHeight:"1.3"}}>
-            Enter your VIN to discover your bike’s age and recommended maintenance instantly.
-          </p>
+      <div className="hero">
+        <div className="hero-box">
+          <h1>🏍️ Ride Smart. Maintain Smart.</h1>
+          <p>Enter your VIN to discover your bike’s age and recommended maintenance instantly.</p>
         </div>
       </div>
 
       {/* Input Card */}
-      <div style={{
-        width:"90%",
-        maxWidth:"320px",
-        margin:"-30px auto 30px auto",
-        backgroundColor:"#1e293b",
-        padding:"20px",
-        borderRadius:"12px",
-        boxShadow:"0 6px 15px rgba(0,0,0,0.4)",
-        textAlign:"center"
-      }}>
+      <div className="input-card">
         <input
           type="text"
           placeholder="Enter 14-character VIN"
           value={vin}
           onChange={(e)=>setVin(e.target.value.toUpperCase())}
           maxLength={14}
-          style={{
-            padding:"10px",
-            width:"100%",
-            marginBottom:"12px",
-            borderRadius:"8px",
-            border:"1px solid #334155",
-            fontSize:"14px",
-            backgroundColor:"#0f172a",
-            color:"#f1f5f9",
-            textAlign:"center"
-          }}
         />
-        <button
-          onClick={analyzeVIN}
-          style={{
-            width:"100%",
-            padding:"10px",
-            borderRadius:"8px",
-            border:"none",
-            backgroundColor:"#3b82f6",
-            color:"white",
-            fontSize:"14px",
-            fontWeight:"600",
-            cursor:"pointer"
-          }}
-        >
-          Analyze VIN
-        </button>
+        <button onClick={analyzeVIN}>Analyze VIN</button>
       </div>
 
       {/* Results Section */}
       {vehicleAge !== null && (
-        <div style={{
-          display:"flex",
-          flexWrap:"wrap",
-          justifyContent:"center",
-          gap:"12px",
-          width:"95%",
-          margin:"auto"
-        }}>
+        <div className="results-container">
           {recommendations.map((part, idx) => (
-            <div key={idx} style={{
-              backgroundColor:"#1e293b",
-              padding:"12px",
-              borderRadius:"12px",
-              width:"45%",
-              maxWidth:"180px",
-              boxShadow:"0 4px 10px rgba(0,0,0,0.3)",
-              textAlign:"center",
-              flexGrow:1
-            }}>
-              <img src={PART_IMAGES[part]} alt={part} width="45" height="45" style={{marginBottom:"8px"}} />
+            <div key={idx} className="result-card">
+              <img src={PART_IMAGES[part]} alt={part} />
               <b>{part}</b>
-              <p style={{fontSize:"12px", color:"#cbd5e1", marginTop:"4px", lineHeight:"1.2"}}>{PART_BENEFITS[part]}</p>
+              <p>{PART_BENEFITS[part]}</p>
             </div>
           ))}
         </div>
       )}
 
-      {/* Footer */}
-      <footer style={{
-        marginTop:"30px",
-        padding:"15px",
-        textAlign:"center",
-        color:"#cbd5e1",
-        backgroundColor:"#1e293b"
-      }}>
+      <footer>
         © {new Date().getFullYear()} VIN Tracker | Built for Smarter Rides 🏍️
       </footer>
     </div>
   );
 }
+
