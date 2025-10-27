@@ -16,7 +16,7 @@ const VinageParts = () => {
     const manufacturingYear = 2010 + (yearCode.charCodeAt(0) - 65);
     const age = currentYear - manufacturingYear;
 
-    let recommendation = "";
+    let recommendation = "";jk
 
     if (age <= 2) {
       recommendation =
@@ -35,15 +35,15 @@ const VinageParts = () => {
   };
 
   const supervisors = [
-    { name: "Amit Sharma", dealer: "Hero Motors Delhi", sales: "₹1,25,000", img: "https://randomuser.me/api/portraits/men/32.jpg" },
-    { name: "Pooja Patel", dealer: "Hero Motors Mumbai", sales: "₹1,10,000", img: "https://randomuser.me/api/portraits/women/44.jpg" },
-    { name: "Ravi Kumar", dealer: "Hero Motors Pune", sales: "₹1,05,000", img: "https://randomuser.me/api/portraits/men/68.jpg" },
+    { name: "Anand Suman", dealer: "Mihir Traders and Agencies", img: "/images/IMG-20251026-WA0043.jpg" },
+    { name: "Santosh Jha", dealer: "Usha Motors",img: "/images/IMG-20251026-WA0044.jpg" },
+    { name: "Rahul Kumar", dealer: "Begusarai Auto Agency",img: "/images/IMG-20251026-WA0045.jpg" },
   ];
 
   const technicians = [
-    { name: "Sunil Verma", dealer: "Hero Motors Jaipur", sales: "₹95,000", img: "https://randomuser.me/api/portraits/men/72.jpg" },
-    { name: "Neha Singh", dealer: "Hero Motors Lucknow", sales: "₹90,500", img: "https://randomuser.me/api/portraits/women/65.jpg" },
-    { name: "Rajesh Kumar", dealer: "Hero Motors Indore", sales: "₹89,000", img: "https://randomuser.me/api/portraits/men/55.jpg" },
+    { name: "Rakesh Kumar", dealer: "Khagaria Auto Agency",img: "/images/IMG-20251026-WA0046.jpg" },
+    { name: "Faizan", dealer: "Usha Motors", img: "/images/IMG-20251026-WA0047.jpg" },
+    { name: "Sonu Kumar", dealer: "Ayesha Motors",img: "/images/IMG-20251026-WA0048.jpg" },
   ];
 
   return (
