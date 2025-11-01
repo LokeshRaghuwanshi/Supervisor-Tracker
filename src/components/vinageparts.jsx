@@ -69,15 +69,15 @@ const VinageParts = () => {
   };
 
   const supervisors = [
-    { name: "Sonu Kumar", dealer: "Ayesha Motors",img: "/images/IMG-20251026-WA0064.jpg" },
-    { name: "Faizan", dealer: "Usha Motors", img: "/images/IMG-20251026-WA0047.jpg" },
-    { name: "Rakesh Kumar", dealer: "Khagaria Auto Agency",img: "/images/IMG-20251026-WA0046.jpg" },
+    { name: "Aditya Kumar", dealer: "Mehwish Motors",img: "/images/IMG-20251101-WA00521.jpg" },
+    { name: "Gautam Kumar", dealer: "Ayesha Motors", img: "/images/IMG-20251101-WA0051.jpg" },
+    { name: "Pankaj Kumar", dealer: "Khagaria Auto Agency",img: "/images/IMG-20251101-WA00651.jpg" },
   ];
 
   const technicians = [
-    { name: "Rahul Kumar", dealer: "Begusarai Auto Agency",img: "/images/IMG-20251026-WA0045.jpg" },
-    {name: "Anand Suman", dealer: "Mihir Traders and Agencies", img: "/images/IMG-20251026-WA0043.jpg" },
-    { name: "Santosh Jha", dealer: "Usha Motors",img: "/images/IMG-20251026-WA0044.jpg" },
+    { name: "Ravi Kumar ", dealer: "Pawas Automobiles",img: "/images/IMG-20251101-WA0064.jpg" },
+    {name: "Neeraj Kumar", dealer: "Aryan Automobiles", img: "/images/IMG-20251101-WA0056.jpg" },
+    { name: "Rupesh Kumar ", dealer: "Maa Automobiles",img: "/images/IMG-20251101-WA0057.jpg" },
   ];
 //name: "Faizan", dealer: "Usha Motors", img: "/images/IMG-20251026-WA0047.jpg"
 //name: "Sonu Kumar", dealer: "Ayesha Motors",img: "/images/IMG-20251026-WA0064.jpg"
@@ -85,7 +85,7 @@ const VinageParts = () => {
   return (
     <div className="vinage-container">
       <header className="vinage-header">
-        <h1>🚀 Parts Retail Performance Portal</h1>
+        <h1>🚀 Top Performance Portal</h1>
         <p>Empowering our heroes to ride further, safer, and stronger!</p>
       </header>
 
@@ -109,7 +109,7 @@ const VinageParts = () => {
 
       <section className="performance-section">
         <div className="category">
-          <h2>🏆 Top Supervisors</h2>
+          <h2>🏆 Top MCC (Dealership)</h2>
           <div className="card-container">
             {supervisors.map((sup, index) => (
               <div key={index} className="card">
@@ -123,7 +123,7 @@ const VinageParts = () => {
         </div>
 
         <div className="category">
-          <h2>🔧 Top Technicians</h2>
+          <h2>🏆 Top MCC (AD/ARD)</h2>
           <div className="card-container">
             {technicians.map((tech, index) => (
               <div key={index} className="card">

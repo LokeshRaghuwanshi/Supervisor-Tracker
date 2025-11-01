@@ -1,133 +1,287 @@
 /* Main layout */
+/* 🌟 Overall Container */
 .vinage-container {
-  min-height: 100vh;
-  width: 100%;
-  background: linear-gradient(135deg, #0a192f, #112d4e);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+  background: linear-gradient(180deg, #081b33, #010a18);
+  min-height: 100vh;
+  padding-bottom: 40px;
+  overflow-x: hidden;
 }
 
+/* 🌟 Header */
 .vinage-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  padding: 30px 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .vinage-header h1 {
-  font-size: 2rem;
-  color: #00bfff;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #00d1ff;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
 }
 
+.vinage-header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  animation: fadeIn 1.5s ease;
+}
+
+/* 🌟 VIN Input Section */
 .vin-section {
-  text-align: center;
-  margin-bottom: 2rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 600px;
+  margin: 25px auto;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 209, 255, 0.3);
+  animation: fadeInUp 1.5s ease;
+}
+
+.vin-section h2 {
+  color: #00d1ff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.vin-section p {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 .vin-input-box {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  align-items: center;
-  margin-top: 1rem;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .vin-input-box input {
-  width: 80%;
-  padding: 0.8rem;
+  padding: 12px;
+  font-size: 1rem;
   border-radius: 8px;
   border: none;
   outline: none;
-  font-size: 1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .vin-input-box button {
-  background-color: #00bfff;
-  color: white;
-  padding: 0.7rem 2rem;
+  background-color: #00d1ff;
+  color: #000;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  padding: 12px;
   font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .vin-input-box button:hover {
-  background-color: #0096c7;
+  background-color: #00a4cc;
+  transform: scale(1.05);
 }
 
+/* 🌟 Result Box */
 .result-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-  white-space: pre-wrap;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  white-space: pre-line;
+  font-size: 0.95rem;
+  line-height: 1.5;
   text-align: left;
+  animation: fadeIn 1s ease;
 }
 
+/* 🌟 Performance Section */
 .performance-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.category {
-  flex: 1;
-  min-width: 280px;
-  text-align: center;
+  margin-top: 40px;
+  padding: 0 15px;
 }
 
 .category h2 {
-  color: #00bfff;
-  margin-bottom: 1rem;
+  color: #00d1ff;
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease;
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
   justify-content: center;
-  gap: 1rem;
+  animation: fadeIn 1.5s ease;
 }
 
+/* 🌟 Cards */
 .card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  width: 180px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
   text-align: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .card img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 3px solid #00d1ff;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
 }
 
 .sales {
-  color: #ffd700;
+  color: #00ff88;
   font-weight: bold;
+  margin-top: 5px;
 }
 
+/* 🌟 Footer */
 .vinage-footer {
-  margin-top: 2rem;
-  text-align: center;
-  font-style: italic;
-  color: #00bfff;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #ccc;
+  padding-bottom: 20px;
+  animation: fadeIn 2s ease;
+}
+
+/* 💻 Desktop & Laptop Full Layout */
+@media (min-width: 1024px) {
+  .vinage-container {
+    padding: 50px 80px;
+  }
+
+  .vin-section {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+  }
+
+  .performance-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .category {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 209, 255, 0.25);
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .vinage-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .vinage-header p {
+    font-size: 1rem;
+  }
+}
+
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .vinage-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .vinage-header p {
+    font-size: 0.85rem;
+  }
+
+  .vin-section {
+    width: 90%;
+    padding: 18px;
+  }
+
+  .vin-input-box input {
+    font-size: 0.95rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .result-box {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🌈 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
